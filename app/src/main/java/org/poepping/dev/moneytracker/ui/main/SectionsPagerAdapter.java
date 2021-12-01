@@ -40,7 +40,7 @@ public class SectionsPagerAdapter extends FragmentStateAdapter {
     @Override
     public int getItemCount() {
         // Show 3 total pages.
-        Log.i(TAG, "getCount called!");
+        Log.i(TAG, "getItemCount called!");
         return 3;
     }
 }
