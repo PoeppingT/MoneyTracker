@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Money Tracker</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_graphs">Graphs/Charts</string>
+    <string name="tab_text_transactions">Transactions</string>
+    <string name="tab_text_settings">Settings</string>
+    <string name="fragment_text">Welcome to my tab!</string>
+    <string name="fab_content_description">This is a button</string>
 </resources>
