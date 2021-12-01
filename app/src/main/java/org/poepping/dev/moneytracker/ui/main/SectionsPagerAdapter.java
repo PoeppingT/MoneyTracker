@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import org.poepping.dev.moneytracker.R;
+import org.poepping.dev.moneytracker.ui.main.tabs.MainTabs;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -23,24 +24,26 @@ public class SectionsPagerAdapter extends FragmentStateAdapter {
 
     private static final String TAG = "SectionsPagerAdapter";
 
-    public SectionsPagerAdapter(Context context, FragmentActivity fragmentActivity) {
+    private final Context context;
+    private final MainTabs mainTabs;
+
+    public SectionsPagerAdapter(Context context, MainTabs mainTabs, FragmentActivity fragmentActivity) {
         super(fragmentActivity);
-        Log.i(TAG, "constructed with Context:" + context);
+        this.context = context;
+        this.mainTabs = mainTabs;
     }
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
         Log.i(TAG, "createFragment:" + position);
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        // getItem is called to instantiate the fragment for the given page
+        return mainTabs.fragmentForTab(position);
     }
 
     @Override
     public int getItemCount() {
         // Show 3 total pages.
-        Log.i(TAG, "getItemCount called!");
         return 3;
     }
 }

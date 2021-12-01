@@ -19,17 +19,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i(TAG, "onCreate: " + savedInstanceState + "(bundle)");
 
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
-        Log.i(TAG, "binding: " + binding);
         setContentView(binding.getRoot());
 
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(getBaseContext(), this);
+        MainTabs mainTabs = new MainTabs();
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(
+                getBaseContext(),
+                mainTabs,
+                this);
         ViewPager2 viewPager = binding.viewPager;
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;
-        new TabLayoutMediator(tabs, viewPager, new MainTabs()).attach();
+        new TabLayoutMediator(tabs, viewPager, mainTabs).attach();
         FloatingActionButton fab = binding.fab;
 
         fab.setOnClickListener((view) ->
