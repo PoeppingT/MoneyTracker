@@ -5,9 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 import org.poepping.dev.moneytracker.databinding.GraphsMainBinding;
 import org.poepping.dev.moneytracker.ui.main.tabs.TabFragment;
@@ -26,7 +24,7 @@ public class GraphsFragment extends TabFragment {
 
     @Override
     protected Class<? extends ViewModel> getViewModelClass() {
-        return GraphsViewModel.class;
+        return GraphsModel.class;
     }
 
     @Override

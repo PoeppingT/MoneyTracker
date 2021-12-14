@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 import org.poepping.dev.moneytracker.databinding.GraphsMainBinding;
-import org.poepping.dev.moneytracker.ui.main.tabs.preferences.PreferencesViewModel;
 
 public abstract class TabFragment extends Fragment {
 

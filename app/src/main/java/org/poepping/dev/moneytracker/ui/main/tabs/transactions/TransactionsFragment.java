@@ -8,13 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.viewbinding.ViewBinding;
 import org.jetbrains.annotations.NotNull;
-import org.poepping.dev.moneytracker.databinding.PreferencesMainBinding;
 import org.poepping.dev.moneytracker.databinding.TransactionsMainBinding;
 import org.poepping.dev.moneytracker.ui.main.tabs.TabFragment;
-import org.poepping.dev.moneytracker.ui.main.tabs.graphs.GraphsFragment;
-import org.poepping.dev.moneytracker.ui.main.tabs.preferences.PreferencesViewModel;
-
-import java.security.cert.TrustAnchor;
 
 public class TransactionsFragment extends TabFragment {
 
@@ -30,7 +25,7 @@ public class TransactionsFragment extends TabFragment {
 
     @Override
     protected Class<? extends ViewModel> getViewModelClass() {
-        return TransactionsViewModel.class;
+        return TransactionsModel.class;
     }
 
     @Override

@@ -5,16 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 import org.jetbrains.annotations.NotNull;
-import org.poepping.dev.moneytracker.databinding.GraphsMainBinding;
 import org.poepping.dev.moneytracker.databinding.PreferencesMainBinding;
 import org.poepping.dev.moneytracker.ui.main.tabs.TabFragment;
-import org.poepping.dev.moneytracker.ui.main.tabs.graphs.GraphsFragment;
-import org.poepping.dev.moneytracker.ui.main.tabs.graphs.GraphsViewModel;
 
 public class PreferencesFragment extends TabFragment {
 
@@ -30,7 +25,7 @@ public class PreferencesFragment extends TabFragment {
 
     @Override
     protected Class<? extends ViewModel> getViewModelClass() {
-        return PreferencesViewModel.class;
+        return PreferencesModel.class;
     }
 
     @Override
