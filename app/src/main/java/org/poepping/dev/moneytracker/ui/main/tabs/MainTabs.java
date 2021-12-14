@@ -1,5 +1,6 @@
 package org.poepping.dev.moneytracker.ui.main.tabs;
 
+import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.tabs.TabLayout;
@@ -23,7 +24,6 @@ public class MainTabs implements TabLayoutMediator.TabConfigurationStrategy {
         MainTab thisTab = MAIN_TABS[position];
         thisTab.setTab(tab);
         thisTab.doConfigure();
-        MAIN_TABS[position].doConfigure();
     }
 
     public Fragment fragmentForTab(int position) {

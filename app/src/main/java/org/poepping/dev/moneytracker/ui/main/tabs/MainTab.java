@@ -7,6 +7,8 @@ import com.google.android.material.tabs.TabLayout;
 
 public abstract class MainTab {
 
+    protected static final String MAINTAB_TAG = "MainTab";
+
     protected TabLayout.Tab tab;
 
     public abstract void doConfigure();

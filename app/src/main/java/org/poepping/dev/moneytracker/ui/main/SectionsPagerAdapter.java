@@ -36,7 +36,6 @@ public class SectionsPagerAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        Log.i(TAG, "createFragment:" + position);
         // getItem is called to instantiate the fragment for the given page
         return mainTabs.fragmentForTab(position);
     }
