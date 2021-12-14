@@ -5,4 +5,11 @@
     <string name="tab_text_settings">Settings</string>
     <string name="fragment_text">Welcome to my tab!</string>
     <string name="fab_content_description">This is a button</string>
+    <string name="switch1_text">switch!</string>
+    <string name="switch2_text">switch 2 !</string>
+    <string name="form1_example">form!!</string>
+    <string name="namehint">namehint</string>
+    <string name="timehint">timehint</string>
+    <string name="hintagain">hintagain</string>
+    <string name="hintagain3">hintagain3</string>
 </resources>

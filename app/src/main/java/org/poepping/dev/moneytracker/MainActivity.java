@@ -32,11 +32,5 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;
         new TabLayoutMediator(tabs, viewPager, mainTabs).attach();
-        FloatingActionButton fab = binding.fab;
-
-        fab.setOnClickListener((view) ->
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show()
-        );
     }
 }

@@ -1,15 +1,17 @@
 package org.poepping.dev.moneytracker.ui.main.tabs.preferences;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.viewbinding.ViewBinding;
-import org.jetbrains.annotations.NotNull;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import org.poepping.dev.moneytracker.R;
 import org.poepping.dev.moneytracker.databinding.PreferencesMainBinding;
 import org.poepping.dev.moneytracker.ui.main.tabs.TabFragment;
+
+import java.util.Arrays;
 
 public class PreferencesFragment extends TabFragment {
 
@@ -21,6 +23,11 @@ public class PreferencesFragment extends TabFragment {
 //        bundle.putInt(ARG_SECTION_NUMBER, index);
         fragment.setArguments(bundle);
         return fragment;
+    }
+
+    @Override
+    protected int getLayoutResource() {
+        return R.layout.preferences_main;
     }
 
     @Override
@@ -42,14 +49,32 @@ public class PreferencesFragment extends TabFragment {
 //            index = getArguments().getInt(ARG_SECTION_NUMBER);
 //        }
 //        graphsViewModel.setIndex(index)
+
+//        FloatingActionButton fab = ((PreferencesMainBinding)binding).fab;
+//
+//        fab.setOnClickListener((view) ->
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show()
+//        );
+//        Log.i(TAG, "Binding: " + binding + " " + binding.getRoot() + " " + binding.getClass());
+//        PreferencesMainBinding preferencesMainBinding = (PreferencesMainBinding) binding;
+//        Log.i(TAG, "PBinding: " + preferencesMainBinding + " " + preferencesMainBinding.getRoot() + " " + preferencesMainBinding.fab);
     }
 
     @Override
-    protected View onCreateViewInternal(@NonNull @NotNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    protected View onCreateViewInternal(View view, Bundle savedInstanceState) {
         // set up observers if necessary
-//        final TextView textView = binding.sectionLabel;
-//        pageViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        Log.i(TAG, "Binding: " + binding + " " + binding.getClass());
 
-        return root;
+        FloatingActionButton fab = ((PreferencesMainBinding)binding).fab;
+
+        fab.setOnClickListener((v) ->
+                Snackbar.make(v.getRootView(), "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show()
+        );
+        Log.i(TAG, "ViewModel: " + viewModel.getClass() + " " + Arrays.toString(viewModel.getClass().getDeclaredMethods()));
+        Log.i(TAG, "View: " + view.getClass() + " " + view.getBackground() + " " + view.getDisplay());
+
+        return view;
     }
 }

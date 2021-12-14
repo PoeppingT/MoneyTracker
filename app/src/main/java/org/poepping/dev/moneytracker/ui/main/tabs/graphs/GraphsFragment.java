@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.viewbinding.ViewBinding;
+import org.poepping.dev.moneytracker.R;
 import org.poepping.dev.moneytracker.databinding.GraphsMainBinding;
 import org.poepping.dev.moneytracker.ui.main.tabs.TabFragment;
 
@@ -20,6 +21,11 @@ public class GraphsFragment extends TabFragment {
 //        bundle.putInt(ARG_SECTION_NUMBER, index);
         fragment.setArguments(bundle);
         return fragment;
+    }
+
+    @Override
+    protected int getLayoutResource() {
+        return R.layout.graphs_main;
     }
 
     @Override
@@ -44,13 +50,11 @@ public class GraphsFragment extends TabFragment {
     }
 
     @Override
-    protected View onCreateViewInternal(
-            @NonNull LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+    protected View onCreateViewInternal(View view, Bundle savedInstanceState) {
         // set up observers if necessary
 //        final TextView textView = binding.sectionLabel;
 //        pageViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-        return root;
+        return view;
     }
 }
