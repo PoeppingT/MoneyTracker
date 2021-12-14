@@ -12,4 +12,5 @@
     <string name="timehint">timehint</string>
     <string name="hintagain">hintagain</string>
     <string name="hintagain3">hintagain3</string>
+    <string name="settings_title">Settings</string>
 </resources>

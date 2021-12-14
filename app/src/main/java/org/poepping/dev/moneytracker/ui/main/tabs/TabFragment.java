@@ -23,7 +23,6 @@ public abstract class TabFragment extends Fragment {
     private static final String TAG = "TabFragment";
 
     protected ViewModel viewModel;
-    protected ViewBinding binding;
 
     @Override
     public final void onCreate(Bundle savedInstanceState) {
@@ -38,13 +37,10 @@ public abstract class TabFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         try {
-            binding = (ViewBinding)(getViewBindingClass().getMethod("inflate", LayoutInflater.class, ViewGroup.class, boolean.class)
-                    .invoke(null, inflater, container, false));
-            Log.i(TAG, "?Binding " + binding.getClass());
+            getViewBindingClass().getMethod("inflate", LayoutInflater.class, ViewGroup.class, boolean.class)
+                    .invoke(null, inflater, container, false);
         } catch (Exception e) {
-            // just catching
-            Log.i(TAG, "Caught an exception " + e);
-            Log.i(TAG, "Exception " + Arrays.toString(e.getStackTrace()));
+            // ignore
         }
         View view = inflater.inflate(getLayoutResource(), container, false);
         return onCreateViewInternal(view, savedInstanceState);
@@ -52,13 +48,13 @@ public abstract class TabFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        // super.onViewCreated(view, savedInstanceState);
         // binding.getRoot().findViewById(R.id.view_pager);
     }
 
     @Override
     public final void onDestroyView() {
         super.onDestroyView();
-        binding = null;
     }
 
     protected abstract Class<? extends ViewModel> getViewModelClass();

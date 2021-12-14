@@ -11,8 +11,6 @@ import org.poepping.dev.moneytracker.R;
 import org.poepping.dev.moneytracker.databinding.PreferencesMainBinding;
 import org.poepping.dev.moneytracker.ui.main.tabs.TabFragment;
 
-import java.util.Arrays;
-
 public class PreferencesFragment extends TabFragment {
 
     private static final String TAG = "PreferencesFragment";
@@ -64,16 +62,12 @@ public class PreferencesFragment extends TabFragment {
     @Override
     protected View onCreateViewInternal(View view, Bundle savedInstanceState) {
         // set up observers if necessary
-        Log.i(TAG, "Binding: " + binding + " " + binding.getClass());
-
-        FloatingActionButton fab = ((PreferencesMainBinding)binding).fab;
-
-        fab.setOnClickListener((v) ->
-                Snackbar.make(v.getRootView(), "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show()
-        );
-        Log.i(TAG, "ViewModel: " + viewModel.getClass() + " " + Arrays.toString(viewModel.getClass().getDeclaredMethods()));
-        Log.i(TAG, "View: " + view.getClass() + " " + view.getBackground() + " " + view.getDisplay());
+        view.findViewById(R.id.fab).setOnClickListener((v) -> {
+            Log.i(TAG, "fab click");
+            Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null)
+                    .show();
+        });
 
         return view;
     }
